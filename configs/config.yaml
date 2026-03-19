@@ -1,0 +1,59 @@
+app:
+  name: "go-api-starter"
+  version: "1.0.0"
+  mode: "debug"       # debug | release | test
+  port: 8080
+  secret_key: "change-this-to-a-very-long-random-secret-key-in-production"
+  # 生产环境必须明确列出允许的前端域名；留空则允许所有来源但不携带凭证（仅限开发）
+  cors_allowed_origins:
+    - "https://yourdomain.com"
+    - "https://www.yourdomain.com"
+
+database:
+  driver: "mysql"
+  host: "mysql"
+  port: 3306
+  username: "root"
+  password: "root123456"
+  dbname: "go_api_starter"
+  charset: "utf8mb4"
+  max_open_conns: 100
+  max_idle_conns: 10
+  max_lifetime_hours: 1
+  log_level: "info"   # silent | error | warn | info
+
+redis:
+  host: "redis"
+  port: 6379
+  password: ""
+  db: 0
+  pool_size: 10
+
+jwt:
+  secret: "change-this-jwt-secret-in-production"
+  expire_hours: 72
+  refresh_expire_hours: 168
+
+logger:
+  level: "debug"       # debug | info | warn | error
+  format: "json"       # json | console
+  output: "stdout"     # stdout | file
+  file_path: "./logs/app.log"
+  max_size_mb: 100
+  max_backups: 10
+  max_age_days: 30
+  compress: true
+
+wechat:
+  mini_program:
+    app_id: "your-mini-program-app-id"
+    app_secret: "your-mini-program-app-secret"
+  # 微信公众号（用于模板消息）
+  official_account:
+    app_id: "your-official-account-app-id"
+    app_secret: "your-official-account-app-secret"
+
+rate_limit:
+  enabled: true
+  requests_per_second: 100
+  burst: 200

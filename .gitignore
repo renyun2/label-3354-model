@@ -1,0 +1,24 @@
+# 二进制文件
+bin/
+tmp/
+
+# 日志
+logs/
+*.log
+
+# 配置（包含敏感信息的本地配置）
+configs/config.local.yaml
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Go
+vendor/
+go.sum
