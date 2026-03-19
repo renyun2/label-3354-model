@@ -65,7 +65,36 @@
 
 ## 快速开始
 
-### 本地开发运行
+### 方式一：Docker 一键运行（推荐）
+
+无需安装任何依赖，只需 Docker 即可运行完整环境。
+
+```bash
+# 1. 克隆项目后，直接启动所有服务
+docker-compose up -d
+
+# 2. 查看服务状态
+docker-compose ps
+
+# 3. 查看日志
+docker-compose logs -f api
+
+# 4. 停止服务
+docker-compose down
+
+# 5. 停止并删除数据卷（清空数据库数据）
+docker-compose down -v
+```
+
+服务启动后访问：
+- API 服务：http://localhost:8080
+- 健康检查：http://localhost:8080/health
+
+**默认账号信息**：
+- MySQL: `apiuser` / `apipassword`，数据库 `go_api_starter`
+- Redis: 无密码，DB 0
+
+### 方式二：本地开发运行
 
 **前置条件**：Go 1.22+、MySQL 8.0+、Redis 7+
 

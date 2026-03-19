@@ -1,0 +1,54 @@
+app:
+  name: "go-api-starter"
+  version: "1.0.0"
+  mode: "release"       # debug | release | test
+  port: 8080
+  secret_key: "your-app-secret-key-change-in-production"
+
+database:
+  driver: "mysql"
+  host: "mysql"         # Docker 网络中的服务名
+  port: 3306
+  username: "apiuser"
+  password: "apipassword"
+  dbname: "go_api_starter"
+  charset: "utf8mb4"
+  max_open_conns: 100
+  max_idle_conns: 10
+  max_lifetime_hours: 1
+  log_level: "info"
+
+redis:
+  host: "redis"         # Docker 网络中的服务名
+  port: 6379
+  password: ""
+  db: 0
+  pool_size: 10
+
+jwt:
+  secret: "your-jwt-secret-key-change-in-production"
+  expire_hours: 72
+  refresh_expire_hours: 168
+
+logger:
+  level: "info"
+  format: "json"
+  output: "stdout"
+  file_path: "./logs/app.log"
+  max_size_mb: 100
+  max_backups: 10
+  max_age_days: 30
+  compress: true
+
+wechat:
+  mini_program:
+    app_id: "wx_your_app_id"
+    app_secret: "your_app_secret"
+  official_account:
+    app_id: "wx_official_app_id"
+    app_secret: "official_app_secret"
+
+rate_limit:
+  enabled: true
+  requests_per_second: 100
+  burst: 200

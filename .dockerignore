@@ -1,0 +1,61 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+server
+dist/
+build/
+
+# Test files
+*_test.go
+.test/
+coverage.out
+coverage.html
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Air (hot reload)
+.air.toml
+tmp/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Docker files (avoid recursion)
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Volumes (will be mounted)
+mysql_data/
+redis_data/
